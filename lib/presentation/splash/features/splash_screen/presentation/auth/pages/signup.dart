@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/common/helper/navigation/appNavigation.dart';
 import 'package:movies_app/core/configs/theme/app_colors.dart';
-import 'package:movies_app/presentation/splash/features/splash_screen/presentation/auth/pages/signup.dart';
+import 'package:movies_app/presentation/splash/features/splash_screen/presentation/auth/pages/signin.dart';
 import 'package:reactive_button/reactive_button.dart';
 import 'package:flutter/gestures.dart';
 
-class SigninPage extends StatelessWidget {
-  const SigninPage({super.key});
+class SignupPage extends StatelessWidget {
+  const SignupPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class SigninPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            _signinText(),
+            _signupText(),
             const SizedBox(
               height: 50,
             ),
@@ -37,16 +37,16 @@ class SigninPage extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            _signupText(context),
+            _signinText(context),
           ],
         ),
       ),
     );
   }
 
-  Widget _signinText() {
+  Widget _signupText() {
     return const Text(
-      'Login',
+      'Signup',
       style: TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 24,
@@ -80,21 +80,21 @@ class SigninPage extends StatelessWidget {
     );
   }
 
-  Widget _signupText(BuildContext context) {
+  Widget _signinText(BuildContext context) {
     return Text.rich(
       TextSpan(
         children: [
           const TextSpan(
-            text: 'Don\'t have an account? ',
+            text: 'Have an account? ',
           ),
           TextSpan(
-            text: 'Signup',
+            text: 'Sign up',
             style: const TextStyle(
               fontWeight: FontWeight.bold,
             ),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                AppNavigator.push(context, const SignupPage());
+                AppNavigator.push(context, const SigninPage());
               },
           ),
         ],

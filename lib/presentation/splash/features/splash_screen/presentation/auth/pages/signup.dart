@@ -72,7 +72,7 @@ class SignupPage extends StatelessWidget {
 
   Widget _signinBtn() {
     return ReactiveButton(
-      title: "Signin",
+      title: "Signup",
       activeColor: AppColors.primary,
       onPressed: () async {},
       onSuccess: () {},
@@ -88,7 +88,7 @@ class SignupPage extends StatelessWidget {
             text: 'Have an account? ',
           ),
           TextSpan(
-            text: 'Sign up',
+            text: 'Signin',
             style: const TextStyle(
               fontWeight: FontWeight.bold,
             ),
